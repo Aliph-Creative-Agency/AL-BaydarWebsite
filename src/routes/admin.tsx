@@ -791,7 +791,7 @@ function WorkshopDialog({
               <Label htmlFor="workshop-image">صورة الورشة</Label>
               <label htmlFor="workshop-image" className="flex min-h-32 cursor-pointer items-center justify-center overflow-hidden rounded-md border border-dashed border-border bg-muted/40 transition-colors hover:border-accent">
                 {imagePreview ? (
-                  <img src={imagePreview} alt="معاينة صورة الورشة" className="aspect-[4/3] max-h-56 w-full object-cover" />
+                  <img src={`/.netlify/images?url=${encodeURIComponent(imagePreview)}&w=1200&q=85`} alt="معاينة صورة الورشة" className="aspect-[4/3] max-h-56 w-full object-cover" />
                 ) : (
                   <span className="flex flex-col items-center gap-2 text-sm text-muted-foreground"><ImagePlus className="size-6" aria-hidden="true" />اختر صورة</span>
                 )}

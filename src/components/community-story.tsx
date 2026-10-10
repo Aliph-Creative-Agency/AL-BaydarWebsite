@@ -130,7 +130,7 @@ export function CommunityStory() {
       <div ref={storyTrackRef} className="relative h-[760svh]">
         <div className="sticky top-0 h-svh overflow-hidden bg-brand-dark">
           <img
-            src={spacesBackdrop}
+            src={`/.netlify/images?url=${encodeURIComponent(spacesBackdrop)}&w=1200&q=85`}
             alt=""
             aria-hidden="true"
             className="absolute inset-0 h-full w-full scale-105 object-cover opacity-75 blur-sm"

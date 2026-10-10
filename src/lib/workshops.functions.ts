@@ -42,7 +42,15 @@ function publicClient() {
 
 async function resolveStoredImage(supabase: ReturnType<typeof publicClient>, imageKey: string) {
   if (!imageKey.startsWith("uploads/")) return resolveWorkshopImage(imageKey);
-  const { data, error } = await supabase.storage.from("workshop-images").createSignedUrl(imageKey, 60 * 60);
+  const { data, error } = await supabase.storage
+  .from("workshop-images")
+  .createSignedUrl(imageKey, 60 * 60, {
+    transform: {
+      width: 800,
+      quality: 80,
+      format: 'origin' 
+    }
+  });
   return error ? resolveWorkshopImage("coffee") : data.signedUrl;
 }
 

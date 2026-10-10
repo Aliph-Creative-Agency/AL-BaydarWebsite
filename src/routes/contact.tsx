@@ -96,7 +96,7 @@ function ContactPage() {
                {contactItems.map(({ icon: Icon, image, label, value, href }) => (
                 <a key={label} href={href} target={label === "الموقع" ? "_blank" : undefined} rel={label === "الموقع" ? "noreferrer" : undefined} className="group flex items-center gap-5 py-6 transition-colors hover:text-accent">
                    <span className="grid size-12 shrink-0 place-items-center overflow-hidden bg-brand-yellow text-brand-dark">
-                     {image ? <img src={image} alt="" className="size-full object-cover" /> : Icon ? <Icon aria-hidden="true" /> : null}
+                     {image ? <img src={`/.netlify/images?url=${encodeURIComponent(image)}&w=1200&q=85`} alt="" className="size-full object-cover" /> : Icon ? <Icon aria-hidden="true" /> : null}
                    </span>
                   <span>
                     <span className="block text-sm text-muted-foreground">{label}</span>

@@ -43,7 +43,7 @@ function HomePage() {
       <SiteHeader />
       <main>
         <section className="relative flex min-h-[calc(100svh-4rem)] items-center justify-center overflow-hidden">
-          <img src={heroImage} alt="بيت البيدر في القدس" className="absolute inset-0 h-full w-full object-cover" />
+          <img src={`/.netlify/images?url=${encodeURIComponent(heroImage)}&w=1200&q=85`} alt="بيت البيدر في القدس" className="absolute inset-0 h-full w-full object-cover" />
           <div className="hero-veil absolute inset-0" />
           {topics.map((topic, index) => (
             <div
@@ -55,7 +55,7 @@ function HomePage() {
           ))}
           <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
             <p className="mb-5 text-sm font-bold text-story-highlight">بيتٌ للمعرفة والحِرفة</p>
-            <h1><img src={wordmark} alt="البيدر" className="mx-auto w-64 brightness-0 invert sm:w-96" /></h1>
+            <h1><img src={`/.netlify/images?url=${encodeURIComponent(wordmark)}&w=1200&q=85`} alt="البيدر" className="mx-auto w-64 brightness-0 invert sm:w-96" /></h1>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-story-muted sm:text-xl">مساحة بتتعلّم فيها، تلتقي، وتعمل أثر — نجلس معاً، نصنع معاً، ونتعلّم من بعضنا.</p>
             <a href="#about" className="group mt-9 inline-flex flex-col items-center gap-2 text-lg font-semibold">
               <span>تعرّف علينا</span>

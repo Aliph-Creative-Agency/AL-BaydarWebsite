@@ -45,7 +45,7 @@ function WorkshopDetailPage() {
                  {workshop.isCompleted ? "ورشة منتهية" : workshop.isFull ? "مكتملة الحجوزات" : `متبقي ${workshop.remaining} مقعد`}
                </span>
             </div>
-            <img src={workshop.image} alt={workshop.title} width={1024} height={768} className="mt-8 aspect-[4/3] w-full rounded-md object-cover" />
+            <img src={`/.netlify/images?url=${encodeURIComponent(workshop.image)}&w=1200&q=85`} alt={workshop.title} width={1024} height={768} className="mt-8 aspect-[4/3] w-full rounded-md object-cover" />
             <div className="mt-6 border-r-2 border-accent pr-4">
               <p className="text-xs text-muted-foreground">يقدّم الورشة</p>
               <p className="mt-1 font-bold">{workshop.host}</p>
