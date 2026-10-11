@@ -119,15 +119,15 @@ export function AboutStory() {
 
         <div className="mt-24 grid gap-4 border-t border-border pt-12 sm:grid-cols-12">
           <figure className="relative overflow-hidden rounded-md sm:col-span-5">
-            <img src={`/.netlify/images?url=${encodeURIComponent(communityImage)}&w=1200&q=85`} alt="لقاء مجتمعي في البيدر" className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-[1.03]" loading="lazy" />
+            <img src={communityImage} alt="لقاء مجتمعي في البيدر" className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-[1.03]" loading="lazy" />
             <figcaption className="absolute inset-x-0 bottom-0 bg-brand-dark/80 px-5 py-4 font-secondary font-bold text-story-foreground">مجتمع يلتقي وينتمي</figcaption>
           </figure>
           <figure className="relative overflow-hidden rounded-md sm:col-span-4">
-            <img src={`/.netlify/images?url=${encodeURIComponent(guidanceImage)}&w=1200&q=85`} alt="جلسة تعليم وتوجيه في البيدر" className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-[1.03]" loading="lazy" />
+            <img src={guidanceImage} alt="جلسة تعليم وتوجيه في البيدر" className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-[1.03]" loading="lazy" />
             <figcaption className="absolute inset-x-0 bottom-0 bg-brand-olive/90 px-5 py-4 font-secondary font-bold text-story-foreground">معرفة تُشارك</figcaption>
           </figure>
           <figure className="relative overflow-hidden rounded-md sm:col-span-3">
-            <img src={`/.netlify/images?url=${encodeURIComponent(craftImage)}&w=1200&q=85`} alt="شباب يعملون على الحرف اليدوية في البيدر" className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-[1.03] sm:h-full" loading="lazy" />
+            <img src={craftImage} alt="شباب يعملون على الحرف اليدوية في البيدر" className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-[1.03] sm:h-full" loading="lazy" />
             <figcaption className="absolute inset-x-0 bottom-0 bg-primary/90 px-5 py-4 font-secondary font-bold text-primary-foreground">أفكار تتحوّل إلى فعل</figcaption>
           </figure>
         </div>
@@ -139,7 +139,7 @@ export function AboutStory() {
         </div>
       </div>
       <div className="relative mt-6 h-24 overflow-hidden sm:mt-8 sm:h-32">
-        <img src={`/.netlify/images?url=${encodeURIComponent(buildingImage)}&w=1200&q=85`} alt="واجهة بيت البيدر الحجري في القدس" className="absolute inset-x-0 bottom-0 h-3/4 w-full object-cover opacity-15" loading="lazy" />
+        <img src={buildingImage} alt="واجهة بيت البيدر الحجري في القدس" className="absolute inset-x-0 bottom-0 h-3/4 w-full object-cover opacity-15" loading="lazy" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 via-35% to-background" />
       </div>
     </section>

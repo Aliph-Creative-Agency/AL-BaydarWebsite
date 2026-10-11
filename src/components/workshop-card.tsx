@@ -11,7 +11,7 @@ export function WorkshopCard({ workshop }: { workshop: Workshop }) {
     >
       <div className="overflow-hidden">
         <img
-          src={`/.netlify/images?url=${encodeURIComponent(workshop.image)}&w=1200&q=85`}
+          src={workshop.image}
           alt={workshop.title}
           loading="lazy"
           width={1024}

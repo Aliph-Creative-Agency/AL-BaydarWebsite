@@ -14,7 +14,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-border/60 bg-card py-10">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-7 px-6 sm:flex-row">
-        <img src={`/.netlify/images?url=${encodeURIComponent(wordmark)}&w=1200&q=85`} alt="البيدر — AlBaydar — אלביידר" className="h-20 w-auto max-w-full object-contain sm:h-24" />
+        <img src={wordmark} alt="البيدر — AlBaydar — אלביידר" className="h-20 w-auto max-w-full object-contain sm:h-24" />
         <div className="flex flex-col items-center gap-4 sm:items-end">
           <p className="text-center text-sm leading-7 text-muted-foreground sm:text-right">مساحة بتتعلّم فيها، تلتقي، وتعمل أثر</p>
           <nav aria-label="روابط البيدر الاجتماعية" className="flex flex-wrap justify-center gap-2 sm:justify-end">
