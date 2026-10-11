@@ -82,15 +82,21 @@ async function getAvailability(rows: WorkshopRow[]) {
   const ids = rows.map((row) => row.id);
   const counts = new Map<string, number>();
   if (ids.length > 0) {
-    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const { data, error } = await supabaseAdmin
-      .from("workshop_bookings")
-      .select("workshop_id")
-      .in("workshop_id", ids)
-      .neq("status", "cancelled");
-    if (error) throw new Error(error.message);
-    for (const booking of data ?? []) {
-      counts.set(booking.workshop_id, (counts.get(booking.workshop_id) ?? 0) + 1);
+    // Booking counts need the service-role key. If it's missing or the query
+    // fails, render the page anyway instead of crashing the whole site.
+    try {
+      const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+      const { data, error } = await supabaseAdmin
+        .from("workshop_bookings")
+        .select("workshop_id")
+        .in("workshop_id", ids)
+        .neq("status", "cancelled");
+      if (error) throw new Error(error.message);
+      for (const booking of data ?? []) {
+        counts.set(booking.workshop_id, (counts.get(booking.workshop_id) ?? 0) + 1);
+      }
+    } catch (err) {
+      console.error("[workshops] availability lookup failed:", err);
     }
   }
   return new Map(rows.map((row) => {
